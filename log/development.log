@@ -173,3 +173,15 @@ Started GET "/" for 187.190.184.106 at 2024-06-21 04:40:03 +0000
 Processing by HomeController#index as HTML
   Rendered home/index.html.erb within layouts/application (1.8ms)
 Completed 200 OK in 71ms (Views: 71.0ms)
+
+
+Started GET "/" for 187.190.184.106 at 2024-06-21 13:05:42 +0000
+
+LoadError (Expected /home/centos/jh-cap-poc/app/config/application.rb to define Application):
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/home_controller.rb:2:in `<top (required)>'
+
+
+  Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
