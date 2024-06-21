@@ -18,9 +18,9 @@ set :deploy_to, "/var/www/#{application}"
 set :user, "deploy"
 
 # Roles de los servidores
-role :web, "2.4.6.8"
-role :app, "2.4.6.8"
-role :db,  "2.4.6.8", primary: true
+role :web, "54.224.194.123"
+role :app, "54.224.194.123"
+role :db,  "54.224.194.123", primary: true
 
 # Opciones SSH
 default_run_options[:pty] = true

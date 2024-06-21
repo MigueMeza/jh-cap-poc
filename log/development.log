@@ -185,3 +185,15 @@ LoadError (Expected /home/centos/jh-cap-poc/app/config/application.rb to define 
   Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
   Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
   Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+
+
+Started GET "/" for 187.190.4.233 at 2024-06-21 21:55:38 +0000
+
+LoadError (Expected /home/centos/jh-cap-poc/app/config/application.rb to define Application):
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/home_controller.rb:2:in `<top (required)>'
+
+
+  Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
