@@ -29,12 +29,28 @@ set :use_sudo, false
 
 # Tareas de despliegue
 namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, roles: :app, except: { no_release: true } do
-    run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"
+  task :bundle_install, :roles => :app do
+    run "cd #{release_path} && export PATH='/opt/rubies/ruby-1.9.3-p551/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH' && bundle install"
   end
-  task :remove_log, :roles => :app do
-    run "cd #{release_path} && rm log"
+
+  task :prepare_tmp_dirs, :roles => :app do
+    run "cd #{release_path} && sudo rm -rf tmp/pids && mkdir -p tmp/pids"
   end
+
+  task :start, :roles => :app do
+    run "cd #{current_path} && export PATH='/opt/rubies/ruby-1.9.3-p551/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH' && sudo rm -rf tmp/pids && mkdir -p tmp/pids && bundle exec rails server -d -b 0.0.0.0 -p 3000"
+  end
+
+  task :stop, :roles => :app do
+    # Si es necesario detener la aplicación, agrega el código aquí
+  end
+
+  task :restart, :roles => :app do
+    deploy.stop
+    deploy.start
+  end
+
+  before 'deploy:finalize_update', 'deploy:bundle_install'
+  before 'deploy:finalize_update', 'deploy:prepare_tmp_dirs'
+  after 'deploy:publishing', 'deploy:restart'
 end
