@@ -42,7 +42,7 @@ namespace :deploy do
   end
 
   task :stop, :roles => :app do
-    # Si es necesario detener la aplicación, agrega el código aquí
+    run "if [ -f #{current_path}/tmp/pids/server.pid ]; then kill -9 `cat #{current_path}/tmp/pids/server.pid`; fi"
   end
 
   task :restart, :roles => :app do
@@ -50,7 +50,18 @@ namespace :deploy do
     deploy.start
   end
 
+  task :clear_cache, :roles => :app do
+    run "cd #{current_path} && bundle exec rake cache:clear"
+  end
+
+  task :precompile_assets, :roles => :app do
+    run "cd #{release_path} && bundle exec rake assets:precompile"
+  end
+
   before 'deploy:finalize_update', 'deploy:bundle_install'
   before 'deploy:finalize_update', 'deploy:prepare_tmp_dirs'
+  before 'deploy:finalize_update', 'deploy:precompile_assets'
   after 'deploy:publishing', 'deploy:restart'
+  after 'deploy:restart', 'deploy:clear_cache'
 end
+

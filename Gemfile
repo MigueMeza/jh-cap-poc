@@ -1,42 +1,87 @@
+# encoding: utf-8
+# Gemfile style guide derived from:
+# http://mcdowall.info/posts/gemfile-best-practices-and-discourse/
+
+# Use `bundle install` after changing this file
+#     `bundle update [gemname]` to force update of gem
+#     `bundle show [gemname]` to see where a bundled gem is installed
+#     `bundle open [gemname]` to edit a bundled gem
+#     `bundle package` to add gem to vendor/cache
+
 source 'https://rubygems.org'
+
+gem 'bundler', '1.17.3'
 
 gem 'rails', '3.2.12'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'mysql2', '~> 0.3.11'
 
-# Gems used only for assets and not required
-# in production environments by default.
-#group :assets do
-  #gem 'sass-rails',   '~> 3.2.3'
-  #gem 'coffee-rails', '~> 3.2.1'
+#gem 'rake', '~> 10.5'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+# pin nokogiri to latest version that works with ruby-1.9.3
+# required to force mini_portile2 dependency to be updated
+# remove this after upgrading ruby to 2.0+
+gem 'nokogiri', '~> 1.6.8.1'
 
-  #gem 'uglifier', '>= 1.0.3'
-#end
+gem 'activerecord-sqlserver-adapter'
+gem 'acts_as_audited', '~> 2.0.0.rc7'
+gem 'acts_as_xlsx'
+gem 'american_date'
+gem 'arel', '~> 3.0.2'
+gem 'axlsx_rails'
+gem 'bootstrap-sass'
+gem 'builder', '~> 3.0.0'
+gem 'cancan', '~> 1.6.7'
+gem 'capistrano-ext', '~> 1.2.1'
+gem 'capistrano', '~> 2.14.1'
+gem 'coffee-rails', '~> 3.2.2', :group => :assets
+gem 'cssbuttongenerator-css-rails', '~> 1.0.1'
+gem 'devise' , '1.5.3'
+gem 'enableplaceholder-jquery-rails', '~> 1.2.2.1'
+gem 'fail-fast', '~> 1.1.0'
+gem 'font-awesome-rails'
+gem 'github-css-rails', '~> 1.1'
+gem 'haml', '~> 4.0.3'
+gem 'jqgrid-jquery-rails', '~> 4.2.0'
+gem 'jquery-rails', '~> 1.0.19'
+gem 'jquery-ui-rails', '~> 4.0.4'
+gem 'logger-jquery-rails', '~> 1.2.0.3'
+gem 'qtip2-jquery-rails', '~> 2.1.1.5'
+gem 'redcarpet'
+gem 'json', '1.8.0'
+#gem 'rinruby', '~> 2.0.1'
+gem 'ruby_parser', '~> 2.0.5'
+gem 'sass-rails', '~> 3.2.4'
+gem 'sass', '= 3.1.12'
+gem 'select2-rails'
+gem 'simple_form'
+gem 'tablecloth-rails', '~> 1.0.1'
+gem 'the1kbgrid-css-rails', '~> 1.1'
+gem 'uglifier', '~> 1.2.3', :group => :assets
+gem 'underscore-rails'
+gem 'validates_timeliness', '~> 3.0.3'
+gem 'whenever', '~> 0.7.3', :require => false
+gem 'wicked_pdf'
+gem 'will_paginate', '~> 3.0.pre2', :require => 'will_paginate'
+gem 'wkhtmltopdf-binary'
+gem 'yui-compressor'
 
-gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
-group :development do
-  gem 'capistrano', '~> 2.14.1', require: false
-  gem 'capistrano-ext', '~> 1.2.1'
+group :development, :test do
+  gem 'rubocop'
+  gem 'rspec-rails'
+  gem 'pry-debugger'
 end
 
-gem 'sqlite3','~> 1.3.13'
+group :development do
+end
+
+group :test do
+  gem 'accept_values_for'
+  gem 'database_cleaner'
+  gem 'machinist', '~> 2.0'
+  gem 'mocha', '~> 0.9.12', :require => false
+  gem 'ruby-prof'
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
+  gem 'timecop', '~> 0.3.5'
+end
