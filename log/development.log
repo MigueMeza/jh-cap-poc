@@ -197,3 +197,37 @@ LoadError (Expected /home/centos/jh-cap-poc/app/config/application.rb to define 
   Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
   Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
   Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+
+
+Started GET "/" for 187.190.184.106 at 2024-06-26 23:26:09 +0000
+
+LoadError (Expected /home/centos/jh-cap-poc/app/config/application.rb to define Application):
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/home_controller.rb:2:in `<top (required)>'
+
+
+  Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /opt/rubies/ruby-1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started GET "/" for 187.190.184.106 at 2024-06-26 23:26:11 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 22ms (Views: 22.0ms)
+
+
+Started GET "/assets/application-92c1e646f8c75681ee0dd45933a44dc3.css?body=1" for 187.190.184.106 at 2024-06-26 23:26:11 +0000
+Served asset /application-92c1e646f8c75681ee0dd45933a44dc3.css - 200 OK (0ms)
+
+
+Started GET "/assets/application-059cc437b3074f7b01120d072c3ca8b2.js?body=1" for 187.190.184.106 at 2024-06-26 23:26:11 +0000
+Served asset /application-059cc437b3074f7b01120d072c3ca8b2.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery-b991f71a652a8667a277f1f4a4559358.js?body=1" for 187.190.184.106 at 2024-06-26 23:26:11 +0000
+Served asset /jquery-b991f71a652a8667a277f1f4a4559358.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs-7a154564bccbf9766cff556e2fb263d5.js?body=1" for 187.190.184.106 at 2024-06-26 23:26:11 +0000
+Served asset /jquery_ujs-7a154564bccbf9766cff556e2fb263d5.js - 200 OK (0ms)
