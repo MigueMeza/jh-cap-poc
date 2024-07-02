@@ -1,27 +1,20 @@
-# config/application.rb
+#config/application.rb
 require File.expand_path('../boot', __FILE__)
 
-# Solo incluye los componentes de Rails que necesitas
-require "action_controller/railtie"
-require "sprockets/railtie"
-# require "action_mailer/railtie"   # Descomenta esta línea si necesitas Action Mailer
-# require "rails/test_unit/railtie"
+require 'rails/all'
 
 if defined?(Bundler)
+  # Si precompilas assets antes de desplegar a producción, usa esta línea
   Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # Si quieres compilar assets perezosamente en producción, usa esta línea
+  # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Sample
+module MyApp
   class Application < Rails::Application
-    config.encoding = "utf-8"
-    config.filter_parameters += [:password]
-    config.assets.enabled = true
-    config.assets.version = '1.0'
-
-    # Deshabilita ActiveRecord
-    config.generators do |g|
-      g.orm :active_record, migration: false
-    end
+    # Configuración de la aplicación
+    # Las configuraciones para el entorno/development/test deben estar en los
+    # archivos correspondientes en config/environments
+    # La configuración de la aplicación va aquí
   end
 end
-
