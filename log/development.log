@@ -231,3 +231,56 @@ Served asset /jquery-b991f71a652a8667a277f1f4a4559358.js - 200 OK (0ms)
 
 Started GET "/assets/jquery_ujs-7a154564bccbf9766cff556e2fb263d5.js?body=1" for 187.190.184.106 at 2024-06-26 23:26:11 +0000
 Served asset /jquery_ujs-7a154564bccbf9766cff556e2fb263d5.js - 200 OK (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (24.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (49.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (10.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to AddEmailToUsers (20240701000001)
+Connecting to database specified by database.yml
+  [1m[36m (4.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to AddEmailToUsers (20240701000001)
+  [1m[35m (2.5ms)[0m  ALTER TABLE `users` ADD `email` varchar(255)
+Mysql2::Error: Table 'matrix_development.users' doesn't exist: ALTER TABLE `users` ADD `email` varchar(255)
+Connecting to database specified by database.yml
+  [1m[36m (4.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20240701000001)
+Connecting to database specified by database.yml
+  [1m[36m (23.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (39.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (4.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20240701000001)
+Connecting to database specified by database.yml
+  [1m[36m (4.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20240701000001)
+  [1m[35m (2.9ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `age` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Mysql2::Error: All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `age` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Connecting to database specified by database.yml
+  [1m[36m (4.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20240701000001)
+  [1m[35m (4.4ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `age` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Mysql2::Error: All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `age` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Connecting to database specified by database.yml
+  [1m[36m (4.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20240701000001)
+  [1m[35m (1.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `age` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Mysql2::Error: All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `age` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Connecting to database specified by database.yml
+  [1m[36m (4.7ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20240701000001)
+Connecting to database specified by database.yml
+  [1m[36m (4.9ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20240701000001)
+Connecting to database specified by database.yml
+  [1m[36m (4.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20240701000001)
+  [1m[35m (25.3ms)[0m   CREATE TABLE users (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ name VARCHAR(255),
+ email VARCHAR(255),
+ age INT,
+ created_at DATETIME NOT NULL,
+ updated_at DATETIME NOT NULL
+ ) ENGINE=InnoDB
+
+  [1m[36m (4.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20240701000001')[0m
+  [1m[35m (1.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 

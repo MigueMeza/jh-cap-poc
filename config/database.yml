@@ -1,0 +1,23 @@
+# config/database.yml
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: admin
+  password: DanaMeEncantas1
+  host: mydb1.cn0m6q84wtgw.us-east-1.rds.amazonaws.com
+
+development:
+  <<: *default
+  database: matrix_development
+
+test:
+  <<: *default
+  database: matrix_development
+
+production:
+  <<: *default
+  database: matrix_development
+  username: admin
+  password: DanaMeEncantas1
+  host: mydb1.cn0m6q84wtgw.us-east-1.rds.amazonaws.com

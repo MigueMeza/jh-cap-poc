@@ -10,7 +10,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module MyApp
+module Sample
   class Application < Rails::Application
     # Configuración de la aplicación
     # Las configuraciones para el entorno/development/test deben estar en los
